@@ -11,14 +11,13 @@ st.write("A simple AI model that predicts future land prices based on area.")
 st.subheader("Training Data")
 st.write("Enter four data points (Area in sq. km and Price) to train the model:")
 
-st.write("Area of land (sq. km)")
+st.write("Input area of land (sq. km) and price of land")
 col1, col2 = st.columns(2)
 with col1:
     x1 = st.number_input("Area 1 (sq. km)", min_value=0.0, value=1.0)
     x2 = st.number_input("Area 2 (sq. km)", min_value=0.0, value=2.0)
     x3 = st.number_input("Area 3 (sq. km)", min_value=0.0, value=3.0)
     x4 = st.number_input("Area 4 (sq. km)", min_value=0.0, value=4.0)
-st.write("Price of land")
 with col2:
     y1 = st.number_input("Price 1", min_value=0.0, value=1000.0)
     y2 = st.number_input("Price 2", min_value=0.0, value=2000.0)
@@ -51,6 +50,7 @@ if df['Area'].sum() > 0 and df['Price'].sum() > 0:
         st.warning("Please enter a valid land area to predict.")
 else:
     st.error("Please enter non-zero training data to train the model.")
+
 
 
 
