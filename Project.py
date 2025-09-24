@@ -1,3 +1,11 @@
+import pandas as pd
+import streamlit as st
+from sklearn.tree import DecisionTreeRegressor
+
+# Title
+st.title("AI Estate Price Predictor")
+st.write("Train a simple AI model to predict future land prices based on area.")
+
 # Training data input
 st.subheader("Training Data")
 st.write("Enter four data points (Area in sq. km and Price) to train the model:")
@@ -19,7 +27,7 @@ with col2:
 data = {'Area': [x1, x2, x3, x4], 'Price': [y1, y2, y3, y4]}
 df = pd.DataFrame(data)
 
-st.subheader("📋 Your Data Table")
+st.subheader("Your Data Table")
 st.dataframe(df)
 
 # Only train if data is valid
@@ -41,6 +49,5 @@ if df['Area'].sum() > 0 and df['Price'].sum() > 0:
         st.warning("Please enter a valid land area to predict.")
 else:
     st.error("Please enter non-zero training data to train the model.")
-
 
 
