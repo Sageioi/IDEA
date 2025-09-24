@@ -4,7 +4,8 @@ from sklearn.tree import DecisionTreeRegressor
 
 # Title
 st.title("AI Estate Price Predictor")
-st.write("Train a simple AI model to predict future land prices based on area.")
+st.subheader("Created by Tega")
+st.write("A simple AI model that predicts future land prices based on area.")
 
 # Training data input
 st.subheader("Training Data")
@@ -49,5 +50,6 @@ if df['Area'].sum() > 0 and df['Price'].sum() > 0:
         st.warning("Please enter a valid land area to predict.")
 else:
     st.error("Please enter non-zero training data to train the model.")
+
 
 
